@@ -5,7 +5,7 @@ import ProductFeed from "../components/ProductFeed";
 
 export default function Home({ products }) {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-amazon_blue">
       <Head>
         <title>Amazon Clone v-2</title>
       </Head>
