@@ -6,7 +6,6 @@ import CheckoutProduct from "../components/CheckoutProduct";
 import { useSession } from "next-auth/client";
 import Currency from "react-currency-formatter";
 
-
 function Checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
@@ -48,11 +47,15 @@ function Checkout() {
           </div>
         </div>
 
-        <div className="flex-col flex bg-white p-10 shadow-md">
+        <div
+          className={`flex-col flex bg-white shadow-md ${
+            items.length > 0 && "p-10"
+          }`}
+        >
           {items.length > 0 && (
             <>
               <h2 className="whitespace-nowrap">
-                Subtotal ({items.length} items): {" "}
+                Subtotal ({items.length} items):{" "}
                 <span className="font-bold">
                   <Currency quantity={totalInBDT} currency="BDT" />
                 </span>

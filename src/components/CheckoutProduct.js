@@ -34,7 +34,7 @@ function CheckoutProduct({
     dispatch(removeFromBasket({ id }));
   };
   return (
-    <div className="grid grid-cols-5">
+    <div className="grid grid-cols-5 shadow-xl p-2">
       <Image src={image} width={200} height={200} objectFit="contain" />
 
       <div className="col-span-3 mx-5">
