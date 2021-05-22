@@ -1,4 +1,5 @@
 import { getProviders, signIn, getSession } from "next-auth/client";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function SignIn({ providers }) {
@@ -7,10 +8,10 @@ export default function SignIn({ providers }) {
     <Header />
       {Object.values(providers).map((provider) => (
         <div
-          className="h-screen flex items-center justify-center"
+          className="h-96 flex items-center justify-center bg-gray-100"
           key={provider.name}
         >
-          <button onClick={() => signIn(provider.id)} className="sign-btn">
+          <button onClick={() => signIn(provider.id)} className="sign-btn focus:outline-none">
             <div className="g-logo-holder">
               <img
                 loading="lazy"
@@ -22,6 +23,7 @@ export default function SignIn({ providers }) {
           </button>
         </div>
       ))}
+      <Footer />
     </>
   );
 }
