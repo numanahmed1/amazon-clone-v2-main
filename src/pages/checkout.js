@@ -5,6 +5,7 @@ import { selectItems, selectTotal } from "../slices/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { useSession } from "next-auth/client";
 import Currency from "react-currency-formatter";
+import Footer from "../components/Footer";
 
 function Checkout() {
   const items = useSelector(selectItems);
@@ -73,6 +74,7 @@ function Checkout() {
           )}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
