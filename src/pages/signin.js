@@ -1,8 +1,10 @@
 import { getProviders, signIn, getSession } from "next-auth/client";
+import Header from "../components/Header";
 
 export default function SignIn({ providers }) {
   return (
     <>
+    <Header />
       {Object.values(providers).map((provider) => (
         <div
           className="h-screen flex items-center justify-center"
